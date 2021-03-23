@@ -12,8 +12,8 @@ const MongoDbStore = require('connect-mongo')(session)
 const passport = require('passport')
 const Emitter = require('events')
 
-const url = 'mongodb://localhost:27017/pizza';
-// const url = 'mongodb+srv://'+process.env.DB_USER+':'+process.env.DB_PASS+'@cluster0.zoxc4.mongodb.net/durgafastfood';
+// const url = 'mongodb://localhost:27017/pizza';
+const url = 'mongodb+srv://'+process.env.DB_USER+':'+process.env.DB_PASS+'@cluster0.zoxc4.mongodb.net/durgafastfood';
 mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: true});
 const connection = mongoose.connection;
 connection.once('open', ()=>{
