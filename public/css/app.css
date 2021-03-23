@@ -528,11 +528,16 @@ section.status {
     font-size: 34px;
   }
 }
-@media (max-width: 422px) {
+@media (max-width: 436px) {
   .logo-image {
     width: 215px;
   }
 }
+.delete-item {
+  cursor: pointer;
+  outline: none;
+}
+.delete-item:hover {background-color: #FE5F1E;}
 
 .StripeElement {
   box-sizing: border-box;

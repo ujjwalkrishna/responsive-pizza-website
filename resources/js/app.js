@@ -1,4 +1,5 @@
- import axios from 'axios'
+ 
+ import axios from 'axios';
  import Noty from 'noty'
  import { initAdmin } from './admin'
  import moment from 'moment'
@@ -6,6 +7,7 @@
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
+let deleteItem = document.querySelectorAll('.delete-item');
 
 function updateCart(pizza) {
     axios.post('/update-cart', pizza).then(res => {
@@ -26,10 +28,42 @@ function updateCart(pizza) {
     })
 }
 
+function updateDelCart(pizza) {
+    axios.post('/remove-item', pizza).then(res => {
+        cartCounter.innerText = res.data.totalQty;
+        new Noty({
+            type: 'success',
+            timeout: 1000,
+            text: 'Item removed',
+            progressBar: false,
+        }).show();
+        setTimeout(() => {
+            window.location.href = '/cart';
+        }, 1000);
+    }).catch(err => {
+        new Noty({
+            type: 'error',
+            timeout: 1000,
+            text: 'Something went wrong',
+            progressBar: false,
+        }).show();
+    })
+}
+
+//Adding to cart
 addToCart.forEach((btn) => {
     btn.addEventListener('click', (e) => {
+        console.log('Button Clicked');
         let pizza = JSON.parse(btn.dataset.pizza)
         updateCart(pizza)
+    })
+})
+
+//Removing Item from cart
+deleteItem.forEach((btn) => {
+    btn.addEventListener('click', (e) =>{
+        let pizza = JSON.parse(btn.dataset.pizza);
+        updateDelCart(pizza);
     })
 })
 

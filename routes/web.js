@@ -18,8 +18,9 @@ function initRoutes(app) {
     app.post('/register', authController().postRegister)
     app.post('/logout', authController().logout)
 
-    app.get('/cart', cartController().index)
-    app.post('/update-cart', cartController().update)
+    app.get('/cart', cartController().index);
+    app.post('/update-cart', cartController().update);
+    app.post('/remove-item', cartController().removeItem);
 
     // Customer routes
     app.post('/orders', auth, orderController().store)

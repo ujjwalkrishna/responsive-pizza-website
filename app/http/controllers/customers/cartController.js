@@ -39,6 +39,23 @@ function cartController() {
                 cart.totalPrice =  cart.totalPrice + req.body.price
             }
             return res.json({ totalQty: req.session.cart.totalQty })
+        },
+        removeItem(req, res) {
+            let cart = req.session.cart
+            console.log(cart);
+            console.log(req.body);
+            cart.items[req.body.item._id].qty = cart.items[req.body.item._id].qty - 1;
+            if(cart.items[req.body.item._id].qty === 0){
+                delete req.session.cart.items[req.body.item._id];
+            }
+            cart.totalQty = cart.totalQty - 1;
+            cart.totalPrice = cart.totalPrice - req.body.item.price;
+            if(req.session.cart.totalQty === 0){
+                delete req.session.cart;
+                return res.json({ totalQty: 0 });
+            }else{
+                return res.json({ totalQty: req.session.cart.totalQty })
+            }
         }
     }
 }

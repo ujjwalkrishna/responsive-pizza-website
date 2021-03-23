@@ -16,7 +16,8 @@
                     <span class="size rounded-full py-1 uppercase text-xs">₹<%= pizza.item.price %></span>
                 </div>
                 <span class="flex-1"><%= pizza.qty %> Pcs</span>
-                <span class="font-bold text-lg">₹ <%= pizza.item.price * pizza.qty %></span>
+                <span class="flex-1 font-bold text-lg">₹ <%= pizza.item.price * pizza.qty %></span>
+                <span class="del-item"><button class="delete-item" data-pizza="<%= JSON.stringify(pizza) %>" style="border: 2px solid black; border-radius: 48%;">&#10134;</button></i></span>
             </div>
             <%  } %>
 
