@@ -528,6 +528,11 @@ section.status {
     font-size: 34px;
   }
 }
+@media (max-width: 422px) {
+  .logo-image {
+    width: 215px;
+  }
+}
 
 .StripeElement {
   box-sizing: border-box;
