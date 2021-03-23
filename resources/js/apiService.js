@@ -2,6 +2,7 @@ import axios from 'axios'
  import Noty from 'noty'
 
 export function placeOrder(formObject) {
+    console.log('In placeOrder');
     axios.post('/orders', formObject).then((res) => {
         new Noty({
             type: 'success',
