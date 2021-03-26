@@ -383,7 +383,13 @@ section.cart .amount {
 
 section.login {
   background: #F8F8F8;
-  min-height: calc(100vh - 86px);
+  min-height: calc(100vh - 86px - 140px);
+}
+section.cart {
+  min-height: calc(100vh - 86px - 140px);
+}
+section.orders {
+  min-height: calc(100vh - 86px - 140px);
 }
 
 section.login a {
