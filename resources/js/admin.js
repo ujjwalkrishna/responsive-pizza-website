@@ -22,7 +22,7 @@ export function initAdmin(socket) {
     function renderItems(items) {
         let parsedItems = Object.values(items)
         totalPrice = parsedItems.reduce((totalPrice, menuItem) => {
-            return totalPrice += menuItem.item.price;
+            return totalPrice += menuItem.item.price * menuItem.qty;
         }, 0)
         return parsedItems.map((menuItem) => {
             return `

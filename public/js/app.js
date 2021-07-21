@@ -27827,10 +27827,10 @@
                 function renderItems(items) {
                     var parsedItems = Object.values(items);
                     totalPrice = parsedItems.reduce((totalPrice, menuItem) => {
-                        return totalPrice += menuItem.item.price;
+                        return totalPrice += menuItem.item.price * menuItem.qty;
                     }, 0)
                     return parsedItems.map(function (menuItem) {
-                        return "\n                <p>".concat(menuItem.item.name, " - ").concat(menuItem.qty, " pcs (₹").concat(menuItem.item.price, ")</p>\n");
+                        return "\n                <p>".concat(menuItem.item.name, " - ").concat(menuItem.qty, " pcs (₹").concat(menuItem.item.price * menuItem.qty, ")</p>\n");
                     }).join('');
                 }
 
