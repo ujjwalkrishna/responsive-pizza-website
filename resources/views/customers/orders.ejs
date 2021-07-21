@@ -50,9 +50,10 @@
                                         <%= moment(order.createdAt).format('hh:mm A') %>
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <% Object.values(order.items).reduce((totalPrice, menuItem)=> {
-                                            return <%= totalPrice +=menuItem.item.price * menuItem.qty %>;
-                                                <% }, 0) %>
+                                        <% Object.values(order.items).reduce((totalPrice, menuItem)=> { %>
+                                            <% return %>
+                                                <%= totalPrice + menuItem.item.price * menuItem.qty %>;
+                                                    <% }, 0) %>
                                     </td>
                                 </tr>
                                 <% }) %>
