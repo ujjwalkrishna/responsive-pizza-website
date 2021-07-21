@@ -35,7 +35,7 @@
                                             <% Object.values(order.items).forEach((menuItem)=>{ %>
                                                 <p>
                                                     <%= menuItem.item.name %> - <%= menuItem.qty %>
-                                                            pcs(₹)<%= menuItem.item.price*menuItem.qty %>
+                                                            pcs (₹<%= menuItem.item.price*menuItem.qty %>)
                                                 </p>
                                                 <% }) %>
                                         </div>
@@ -50,10 +50,7 @@
                                         <%= moment(order.createdAt).format('hh:mm A') %>
                                     </td>
                                     <td class="border px-4 py-2">
-                                        <% Object.values(order.items).reduce((totalPrice, menuItem)=> { %>
-                                            <% return %>
-                                                <%= totalPrice + menuItem.item.price * menuItem.qty %>;
-                                                    <% }, 0) %>
+                                        <%= order.totalPrice %>
                                     </td>
                                 </tr>
                                 <% }) %>
