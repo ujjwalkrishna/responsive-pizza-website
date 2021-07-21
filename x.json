@@ -1,0 +1,56 @@
+{
+    "_id": {
+        "$oid": "605d4ab59fd8c30004c9230a"
+    },
+    "paymentType": "COD",
+    "paymentStatus": false,
+    "status": "order_placed",
+    "customerId": {
+        "$oid": "605d4a7f9fd8c30004c92309"
+    },
+    "items": {
+        "60588b5fe9ed2047c8162f53": {
+            "item": {
+                "_id": "60588b5fe9ed2047c8162f53",
+                "name": "Chilli Potato",
+                "image": "chillipotatofixed.jpg",
+                "price": {
+                    "$numberInt": "120"
+                },
+                "size": "FULL"
+            },
+            "qty": {
+                "$numberInt": "1"
+            }
+        },
+        "60588b6de9ed2047c8162f54": {
+            "item": {
+                "_id": "60588b6de9ed2047c8162f54",
+                "name": "Chilli Potato",
+                "image": "chillipotatofixed.jpg",
+                "price": {
+                    "$numberInt": "60"
+                },
+                "size": "HALF"
+            },
+            "qty": {
+                "$numberInt": "1"
+            }
+        }
+    },
+    "phone": "b@c.com",
+    "address": "Villlage - Chakwa, Post - Chakwa",
+    "createdAt": {
+        "$date": {
+            "$numberLong": "1616726709726"
+        }
+    },
+    "updatedAt": {
+        "$date": {
+            "$numberLong": "1616726709726"
+        }
+    },
+    "__v": {
+        "$numberInt": "0"
+    }
+}

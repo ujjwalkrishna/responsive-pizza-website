@@ -45,7 +45,7 @@ export async function initStripe() {
     })
 
 
-    // Ajax call
+// Ajax call
 const paymentForm = document.querySelector('#payment-form');
 if(paymentForm) {
     paymentForm.addEventListener('submit', async (e) => {
